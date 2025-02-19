@@ -11,10 +11,40 @@ html {
   font-family: sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+a {
+  font-size: 2rem;
+  color: wheat;
+}
+
+a:focus {
+  outline: 2px solid #ffa726;
+}
+
+a:hover {
+  color: rgb(255, 238, 0);
+}
+
+.intro {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+.intro h1 {
+  font-size: 4rem;
+  color: white;
+}
+
 .keys {
   display: flex;
+  flex-wrap: wrap;
   flex: 1;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
 }
@@ -29,8 +59,15 @@ html {
   width: 10rem;
   text-align: center;
   color: white;
-  background: rgba(17, 8, 56, 0.7);
+  /* background: rgba(17, 8, 56, 0.7); */
+  background: rgba(17, 8, 56, 0.9);
   text-shadow: 0 0 0.5rem black;
+}
+
+.key:focus,
+.key:hover {
+  outline: 3px solid #ffa726;
+  transform: scale(1.1);
 }
 
 .playing {
@@ -49,4 +86,27 @@ kbd {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #ffd6c9;
+}
+
+/* ===========================
+ Responsive Design
+=========================== */
+@media (max-width: 768px) {
+  html {
+    font-size: 9px; /* Scale down for mobile */
+  }
+
+  .intro h1 {
+    font-size: 3rem;
+  }
+
+  .key {
+    width: 8rem;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+  }
+
+  kbd {
+    font-size: 3rem;
+  }
 }

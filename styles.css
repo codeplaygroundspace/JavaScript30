@@ -1,0 +1,188 @@
+/* ================================
+ Global CSS Variables
+================================ */
+:root {
+  /* Colors */
+  --primary-color: #1e23a5;
+  --secondary-color: #216cad23;
+  --accent-color: #73e9fb;
+  --background-color: #051f2b;
+  --text-color: #ffffff;
+  --scrollbar-track: #051f2b;
+  --scrollbar-thumb: #73e9fb;
+  --selection-bg: rgb(2, 51, 61);
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+  /* Font */
+  --font-family: "Roboto Slab", serif;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.5rem;
+
+  /* Border radius */
+  --border-radius: 10px;
+
+  /* Transitions */
+  --transition-speed: 0.3s ease-in-out;
+}
+/* ================================
+ Reset and Scrollbar Styles
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--accent-color) var(--secondary-color);
+  scrollbar-width: 5px;
+  scrollbar-gutter: auto;
+  overflow-y: scroll;
+}
+
+::selection {
+  background-color: var(--selection-bg);
+}
+
+/* Scrollbar for WebKit */
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0 2px rgba(2, 5, 46, 0.3);
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================
+ Global Layout
+================================ */
+html,
+body {
+  overflow: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: var(--spacing-md);
+}
+
+ul {
+  list-style: none;
+}
+/* ================================
+ Grid Layout
+================================ */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--spacing-md);
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
+/* ================================
+   Card Styles
+  ================================ */
+.card {
+  cursor: pointer;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-md);
+  text-align: center;
+  background-color: rgba(17, 25, 40, 0.3);
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed),
+    box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card a {
+  display: block;
+  text-decoration: none;
+}
+
+/* ================================
+   Card Image and Title
+  ================================ */
+.card-img,
+.card-gif {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed);
+}
+
+.card-img:hover,
+.card-gif:hover {
+  transform: scale(1.05);
+}
+
+.card-title {
+  overflow: hidden;
+  /* max-width: 80%; */
+  font-size: var(--font-size-lg);
+  color: var(--text-color);
+  /* text-overflow: ellipsis; */
+  /* white-space: nowrap; */
+  opacity: 1;
+  transition: opacity var(--transition-speed);
+}
+
+/* ================================
+   Header
+  ================================ */
+.intro {
+  padding: 4rem 5rem;
+  text-align: center;
+}
+
+.intro h1 {
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 1.5rem;
+  font-size: 4.75rem;
+  font-weight: 100;
+  line-height: 1;
+  letter-spacing: 2px;
+}
+
+.intro p {
+  margin-bottom: 30px;
+  font-size: 1.25rem;
+}
