@@ -3,19 +3,20 @@
 ================================ */
 :root {
   /* Colors */
-  --primary-color: #202033;
+  --bg-color: #0a0c1b;
+  --bg-secondary-color: #0d2583;
   --secondary-color: #216cad23;
-  --accent-color: #73e9fb;
+  --accent-color: #d473fb;
   --background-color: #051f2b;
   --text-color: #ffffff;
+  --link-color: #b7ea0f;
   --scrollbar-track: #051f2b;
-  --scrollbar-thumb: #73e9fb;
-  --selection-bg: rgb(2, 51, 61);
+  --scrollbar-thumb: #d473fb;
 
   /* Spacing */
   --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
 
   /* Font */
   --font-family: "Roboto Slab", serif;
@@ -45,10 +46,6 @@
   scrollbar-width: 5px;
   scrollbar-gutter: auto;
   overflow-y: scroll;
-}
-
-::selection {
-  background-color: var(--selection-bg);
 }
 
 /* Scrollbar for WebKit */
@@ -82,7 +79,12 @@ body {
 body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
-  background-color: var(--primary-color);
+  background-color: var(--bg-color);
+  background: radial-gradient(
+    circle,
+    var(--bg-secondary-color) 0%,
+    var(--bg-color) 100%
+  );
   color: var(--text-color);
   line-height: 1.6;
   padding: var(--spacing-md);
@@ -90,6 +92,10 @@ body {
 
 ul {
   list-style: none;
+}
+
+a {
+  color: var(--link-color);
 }
 /* ================================
  Grid Layout
@@ -116,15 +122,15 @@ ul {
   justify-content: center;
   padding: var(--spacing-md);
   text-align: center;
-  background-color: rgba(17, 25, 40, 0.3);
+  background-color: rgba(255, 255, 255, 0.09);
   border-radius: var(--border-radius);
   transition: transform var(--transition-speed),
     box-shadow var(--transition-speed);
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-15px);
+  box-shadow: 0px 8px 10px rgb(10 44 135);
 }
 
 .card a {
